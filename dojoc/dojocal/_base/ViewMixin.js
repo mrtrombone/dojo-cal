@@ -1,21 +1,16 @@
 /*
  * Author: unscriptable
- * Date: Feb 22, 2009
+ * Date: Oct 22, 2011
  */
-dojo.provide('dojoc.dojocal._base.ViewMixin');
-
-dojo.require('dijit._Templated');
-dojo.require('dijit._Widget');
-dojo.require('dojo.date');
-
-(function () { // closure for local variables
+define(["dojo/_base/declare","dijit/_Templated", "dijit/_Widget", "dojo/date", "dijit/_Contained","./common"], 
+	function(declare,_Templated, _Widget, date, _Contained,common){
 
 var djc = dojoc.dojocal;
 
 /**
  * dojoc.dojocal._base.ViewMixin
  */
-dojo.declare('dojoc.dojocal._base.ViewMixin', dijit._Contained, {
+return declare( _Contained, {
 
 	// name: String
 	// the unique name for this view
@@ -211,4 +206,4 @@ dojo.declare('dojoc.dojocal._base.ViewMixin', dijit._Contained, {
 
 });
 
-})(); // end of closure for local variables
+}); // end of closure for local variables

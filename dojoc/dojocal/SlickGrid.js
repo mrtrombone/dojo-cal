@@ -10,20 +10,15 @@
 
 /*
 	Author: unscriptable
-	Date: Jan 31, 2009
+	Date: Oct 22, 2011
  */
-dojo.provide('dojoc.dojocal.SlickGrid');
+ 
+define(["dojo/_base/declare","./Grid", "./extras/ViewTransMixin"], 
+	function(declare,Grid, ViewTransMixin){
+ 
 
-dojo.require('dojoc.dojocal.Grid');
-dojo.require('dojoc.dojocal.extras.ViewTransMixin');
 
-(function () { // closure for local variables
+		return declare([Grid, ViewTransMixin], {
+		});
 
-/**
- * dojoc.dojocal.SlickGrid
- */
-dojo.declare('dojoc.dojocal.SlickGrid', [dojoc.dojocal.Grid, dojoc.dojocal.extras.ViewTransMixin], {
-
-});
-
-})(); // end of closure for local variables
+}); // end of closure for local variables

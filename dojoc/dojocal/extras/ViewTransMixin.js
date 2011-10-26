@@ -16,11 +16,11 @@
 			- week <--> month
 			- day <--> month
 */
-dojo.provide('dojoc.dojocal.extras.ViewTransMixin');
 
-dojo.require('dojoc.dojocal._base.common');
+define(["dojo/_base/declare","../_base/common"], 
+	function(declare,common){
 
-(function () { // closure for local variables
+
 
 var djc = dojoc.dojoca;
 
@@ -28,7 +28,7 @@ var djc = dojoc.dojoca;
 	dojoc.dojocal.ViewTransMixin
 	Mixin this class to use cool transition animations when switching between grid views!
 */
-dojo.declare('dojoc.dojocal.extras.ViewTransMixin', null, {
+return declare( null, {
 
 	xxx_transitionViews: function (oldView, newView, oldNode, newNode) {
 		// TODO: get this working
@@ -113,4 +113,4 @@ dojo.declare('dojoc.dojocal.extras.ViewTransMixin', null, {
 
 });
 
-})(); // end of closure for local variables
+});

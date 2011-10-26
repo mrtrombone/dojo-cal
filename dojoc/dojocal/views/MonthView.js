@@ -1,20 +1,24 @@
 /*
  * Author: unscriptable
- * Date: Feb 22, 2009
+ * Date: Oct 22, 2011
  */
-dojo.provide('dojoc.dojocal.views.MonthView');
+define(["dojo/_base/declare","dijit/_Templated","../_base/ViewBase"],
+function(declare,_Templated,ViewBase){
+ 
 
-dojo.require('dijit._Templated');
-dojo.require('dojoc.dojocal._base.ViewBase');
 
-(function (/* dojoc.dojocal */ djc, /* dojo.date */ datelib) { // closure for local variables
+//(function (/* dojoc.dojocal */ djc, /* dojo.date */ datelib) { // closure for local variables
 
 /**
  * dojoc.dojocal.views.MonthView
  * TODO:
  * - this widget shares some with the MultiDayViewBase class.
  */
-dojo.declare('dojoc.dojocal.views.MonthView', [djc._base.ViewBase, dijit._Templated], {
+ 
+ var djc = dojoc.dojocal,
+	datelib = dojo.date;
+ 
+return declare([ViewBase, _Templated], {
 
 	templatePath: dojo.moduleUrl('dojoc.dojocal.views', 'MonthView.html'),
 
@@ -369,4 +373,4 @@ dojo.declare('dojoc.dojocal.views.MonthView', [djc._base.ViewBase, dijit._Templa
 
 });
 
-})(dojoc.dojocal, dojo.date); // end of closure for local variables
+});

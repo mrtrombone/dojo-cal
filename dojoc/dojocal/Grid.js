@@ -10,30 +10,17 @@
 
 /*
 	Author: unscriptable
-	Date: Dec 5, 2008
+	Date: Oct 22, 2011
 */
-dojo.provide('dojoc.dojocal.Grid');
-
-dojo.require('dojoc.dojocal._base.common');
-dojo.require('dijit._Templated');
-dojo.require('dijit._Widget');
-dojo.require('dijit._Container');
-dojo.require('dojo.fx');
-dojo.require("dojo.date");
-dojo.require('dojo.date.locale');
-dojo.require('dojo.dnd.Moveable');
-dojo.require('dojoc.dojocal._base.EventMoveable');
-dojo.require('dojoc.dojocal._base.Mover');
-dojo.require('dojoc.dojocal._base.ViewMixin');
-
-(function () { // closure for local variables
+define(["dojo/_base/declare","./_base/common","dijit/_Templated","dijit/_Widget","dijit/_Container","dojo/fx","dojo/date","dojo/date/locale","dojo/dnd/Moveable","./_base/EventMoveable","./_base/Mover","./_base/ViewMixin"],
+function (declare,common,_Templated,_Widget,_Container,fx,date,locale,Moveable,EventMoveable,Mover,ViewMixin) { // closure for local variables
 
 // bring these local for speed, size, and convenience
 var djc = dojoc.dojocal,
 	dndModes = djc.DndModes,
 	allDayEventsPositions = djc.AllDayEventPositions;
 
-dojo.declare('dojoc.dojocal.Grid', [dijit._Widget, dijit._Templated, dijit._Container], {
+return declare([_Widget, _Templated, _Container], {
 	/**
 	 * summary: the main dojocal widget used to display a day, week, or month view of a user's calendar events
 	 * requires: dojo 1.1.1 / dijit 1.1.1 or higher
@@ -559,5 +546,4 @@ dojo.declare('dojoc.dojocal.Grid', [dijit._Widget, dijit._Templated, dijit._Cont
 	}
 
 });
-
-})(); // end of closure for local variables
+}); 
